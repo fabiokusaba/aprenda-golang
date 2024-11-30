@@ -9,7 +9,7 @@ func main() {
 	canal := make(chan int, 1)
 	// Colocando um valor no buffer do canal
 	canal <- 42
-	// deadlock!
+	// Buffer block!
 	// canal <- 43
 	// Transformando em uma goroutine
 	// go func() {
@@ -36,4 +36,5 @@ func main() {
 // O buffer é o seguinte: posso pegar um canal e dizer pra ele que esse canal não preciso que alguém retire
 // informação ao mesmo tempo que alguém põe informação, eu posso ter o buffer de um e isso quer dizer que eu posso
 // deixar um valor ali dentro e a pessoa pode tirar depois para tirar um pouco dessa sincronia.
-// Os buffers também bloqueiam porque eles possuem um valor finito, então
+// Os buffers também bloqueiam porque eles possuem um valor finito, via de regra a gente não vai utilizar buffers
+// na nossa programação existem casos específicos que buffers são úteis, mas em geral não se usam buffers.
