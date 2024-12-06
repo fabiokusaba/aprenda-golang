@@ -1,4 +1,4 @@
-package main
+package funcionalidades
 
 func Soma(i ...int) int {
 	total := 0
